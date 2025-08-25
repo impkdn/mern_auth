@@ -1,0 +1,21 @@
+.form__wrapper{
+    width: 40%;
+    
+}
+.form__wrapper form,input{
+    width: 100%;
+
+}
+.form__wrapper input{
+    outline: none;
+    height: 55px;
+    border-radius: 8px;
+    border: none;
+
+}
+::placeholder{
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}

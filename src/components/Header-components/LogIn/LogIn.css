@@ -1,0 +1,19 @@
+.log__in__btn{
+    display: inline-block;
+    /* background-color: aqua; */
+    width: 10%;
+}
+.log__in__btn button{
+    color: blue;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    height: 35px;
+    background: #fdfaf5;
+    border: none;
+    border-radius: 5px;
+
+}
+.log__in__btn button:hover{
+    cursor: pointer;
+}
