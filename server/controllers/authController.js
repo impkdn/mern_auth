@@ -102,3 +102,4 @@ export const logout = async (req, res) => {
     return res.json({ success: false, massege: error.massege });
   }
 };
+// git pull origin <branch_name> --allow-unrelated-histories
