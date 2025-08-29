@@ -105,7 +105,8 @@ export const logout = async (req, res) => {
 
 export const sendVerifyOtp = async (req, res) => {
   try {
-    const { userId } = req.body;
+    const   userId  = req.body;
+    
     const user = await userModel.findById(userId);
     if (user.isAccountVerified) {
       return res.json({ success: false, massege: "account already varufied" });
@@ -113,7 +114,7 @@ export const sendVerifyOtp = async (req, res) => {
     const otp = String(Math.floor(100000 + Math.random() * 900000));
     user.varifyOtpExpireAt = Date.now() + 24 * 60 * 60 * 1000;
     user.varifyOtp = otp;
-
+    
     await user.save();
 
     const mailOptions = {
@@ -142,7 +143,7 @@ export const varifyemail = async (req, res) => {
   }
 
   try {
-    const user = await userModel.findById(userId);
+    const user = await userModel.findById({userId});
     if (!user) {
       return res.json({ success: false, massege: "user not found" });
     }
@@ -180,6 +181,7 @@ export const sendResetOtp = async (req, res) => {
   }
   try {
     const user = await userModel.findOne({email});
+
     if (!user){
       return res.json({success: false, message: "user nót found"})
 
